@@ -413,5 +413,5 @@ export const API_FILES = {
         'OverflowItemContainerRefDirective',
         'OverflowLayoutPopoverContentDirective'
     ],
-    skeleton: ['SkeletonComponent', 'SkeletonService', 'SkeletonDirective', 'SkeletonTemplateDirective']
+    skeleton: ['SkeletonComponent', 'SkeletonGlobalService', 'SkeletonDirective', 'SkeletonTemplateDirective']
 };
