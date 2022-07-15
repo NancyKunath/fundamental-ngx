@@ -20,6 +20,7 @@ import { ResizeObserverService, RtlService } from '@fundamental-ngx/core/utils';
 import { BehaviorSubject, debounceTime, firstValueFrom, map, startWith, Subscription, tap } from 'rxjs';
 import { MenuComponent } from '@fundamental-ngx/core/menu';
 import { Placement } from '@fundamental-ngx/core/shared';
+import { SkeletonConsumerDirective, skeletonConsumerProviders } from '@fundamental-ngx/core/skeleton';
 
 /**
  * Breadcrumb parent wrapper directive. Must have breadcrumb item child directives.
@@ -42,7 +43,8 @@ import { Placement } from '@fundamental-ngx/core/shared';
     templateUrl: './breadcrumb.component.html',
     styleUrls: ['./breadcrumb.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: skeletonConsumerProviders({ text: true })
 })
 export class BreadcrumbComponent implements AfterViewInit, OnInit, OnDestroy {
     /** @hidden */
@@ -82,13 +84,17 @@ export class BreadcrumbComponent implements AfterViewInit, OnInit, OnDestroy {
     /** @hidden */
     private _itemToSize = new Map<BreadcrumbItemComponent, number>();
 
+    /** @hidden */
     constructor(
-        public readonly elementRef: ElementRef<Element>,
-        @Optional() private readonly _rtlService: RtlService | null,
-        private readonly _cdRef: ChangeDetectorRef,
-        private readonly _resizeObserver: ResizeObserverService,
-        private readonly _ngZone: NgZone
-    ) {}
+        public elementRef: ElementRef<Element>,
+        @Optional() private _rtlService: RtlService | null,
+        private _cdRef: ChangeDetectorRef,
+        private _resizeObserver: ResizeObserverService,
+        private _ngZone: NgZone,
+        private readonly _skeletonConsumer: SkeletonConsumerDirective
+    ) {
+        _skeletonConsumer.consume();
+    }
 
     /** @hidden */
     ngOnInit(): void {

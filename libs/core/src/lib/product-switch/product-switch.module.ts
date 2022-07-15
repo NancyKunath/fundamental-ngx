@@ -6,9 +6,10 @@ import { CommonModule } from '@angular/common';
 import { DragAndDropModule } from '@fundamental-ngx/core/utils';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ProductSwitchBodyComponent } from './product-switch-body/product-switch-body.component';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 
 @NgModule({
-    imports: [PopoverModule, CommonModule, ButtonModule, DragAndDropModule, DragDropModule],
+    imports: [PopoverModule, CommonModule, ButtonModule, DragAndDropModule, DragDropModule, SkeletonModule],
     declarations: [ProductSwitchComponent, ProductSwitchBodyComponent],
     exports: [ProductSwitchComponent, ProductSwitchBodyComponent]
 })

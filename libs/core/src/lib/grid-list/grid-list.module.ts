@@ -21,6 +21,7 @@ import { GridListTitleBarAdditionalTitleItemDirective } from './components/grid-
 import { GridListTitleBarSpacerComponent } from './components/grid-list-title-bar-spacer/grid-list-title-bar-spacer.component';
 import { GridListItemBodyDirective } from './directives/grid-list-item-body.directive';
 import { GridListItemImageDirective } from './directives/grid-list-item-image.directive';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,16 @@ import { GridListItemImageDirective } from './directives/grid-list-item-image.di
         GridListItemImageDirective,
         GridListItemBodyDirective
     ],
-    imports: [CommonModule, FormsModule, ButtonModule, IconModule, TitleModule, ToolbarModule, ObjectStatusModule],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ButtonModule,
+        IconModule,
+        TitleModule,
+        ToolbarModule,
+        ObjectStatusModule,
+        SkeletonModule
+    ],
     exports: [
         GridListComponent,
         GridListItemComponent,
