@@ -56,7 +56,6 @@ export class ShellbarComponent implements OnChanges, AfterContentInit {
     /** @hidden */
     applyShellbarModeToCombobox(): void {
         if (this.comboboxComponent) {
-            this.comboboxComponent.compact = false;
             this.comboboxComponent.inShellbar = true;
             if (this.size === 'xl' || this.size === 's') {
                 this.comboboxComponent.hideInput = false;

@@ -21,6 +21,8 @@ import { ProductSwitchModule } from '@fundamental-ngx/core/product-switch';
 import { ShellbarSidenavDirective } from './shellbar-sidenav.directive';
 import { ShellbarActionsMobileComponent } from './shellbar-actions-mobile/shellbar-actions-mobile.component';
 import { AvatarModule } from '@fundamental-ngx/core/avatar';
+import { DeprecatedShellbarCompactDirective } from './deprecated-shellbar-compact.directive';
+import { ContentDensityModule } from '@fundamental-ngx/core/content-density';
 
 import { InputGroupModule } from '@fundamental-ngx/core/input-group';
 
@@ -35,7 +37,8 @@ import { InputGroupModule } from '@fundamental-ngx/core/input-group';
         ShellbarLogoComponent,
         ShellbarTitleComponent,
         ShellbarUserMenuComponent,
-        ShellbarSidenavDirective
+        ShellbarSidenavDirective,
+        DeprecatedShellbarCompactDirective
     ],
     imports: [
         CommonModule,
@@ -49,6 +52,7 @@ import { InputGroupModule } from '@fundamental-ngx/core/input-group';
         IconModule,
         AvatarModule,
         InputGroupModule
+        ContentDensityModule
     ],
     exports: [
         ShellbarComponent,
@@ -60,7 +64,9 @@ import { InputGroupModule } from '@fundamental-ngx/core/input-group';
         ShellbarLogoComponent,
         ShellbarTitleComponent,
         ShellbarUserMenuComponent,
-        ShellbarSidenavDirective
+        ShellbarSidenavDirective,
+        DeprecatedShellbarCompactDirective,
+        ContentDensityModule
     ]
 })
 export class ShellbarModule {}
