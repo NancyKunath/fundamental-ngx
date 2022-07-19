@@ -24,6 +24,8 @@ import { AvatarModule } from '@fundamental-ngx/core/avatar';
 import { DeprecatedShellbarCompactDirective } from './deprecated-shellbar-compact.directive';
 import { ContentDensityModule } from '@fundamental-ngx/core/content-density';
 
+import { InputGroupModule } from '@fundamental-ngx/core/input-group';
+
 @NgModule({
     declarations: [
         ShellbarComponent,
@@ -49,6 +51,7 @@ import { ContentDensityModule } from '@fundamental-ngx/core/content-density';
         ProductSwitchModule,
         IconModule,
         AvatarModule,
+        InputGroupModule,
         ContentDensityModule
     ],
     exports: [

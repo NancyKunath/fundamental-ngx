@@ -335,6 +335,10 @@ export class ComboboxComponent
      */
     inShellbar = false;
 
+    hideInput = false;
+
+    disableHideShowOfInput = false;
+
     /** @hidden */
     displayedValues: any[] = [];
 
@@ -385,7 +389,7 @@ export class ComboboxComponent
     /** @hidden */
     ngAfterViewInit(): void {
         this._addShellbarClass();
-
+        this.inShellbar && this.hideShowInputField();
         if (this.mobile) {
             this._setUpMobileMode();
         }
@@ -537,6 +541,11 @@ export class ComboboxComponent
             return;
         }
 
+        if (this.inShellbar && this.isEmptyValue && !this.disableHideShowOfInput) {
+            this.hideInput = !this.hideInput;
+            this.hideShowInputField();
+        }
+
         if (this.searchFn) {
             this.searchFn();
         }
@@ -626,6 +635,24 @@ export class ComboboxComponent
             this.searchInputElement.nativeElement.classList.add('fd-shellbar__input-group-input');
             if (this.inputGroup) {
                 this.inputGroup.setInShellbar(true);
+            }
+        }
+    }
+
+    hideShowInputField(): void {
+        if (this.hideInput) {
+            this.searchInputElement.nativeElement.style.display = 'none';
+
+            if (this.searchInputElement.nativeElement.parentElement) {
+                this.searchInputElement.nativeElement.parentElement.classList.remove('fd-input-group');
+                this.searchInputElement.nativeElement.parentElement.classList.remove('fd-shellbar__input-group');
+            }
+        } else {
+            this.searchInputElement.nativeElement.style.display = '';
+
+            if (this.searchInputElement.nativeElement.parentElement) {
+                this.searchInputElement.nativeElement.parentElement.classList.add('fd-input-group');
+                this.searchInputElement.nativeElement.parentElement.classList.add('fd-shellbar__input-group');
             }
         }
     }
