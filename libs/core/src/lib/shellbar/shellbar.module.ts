@@ -51,7 +51,7 @@ import { InputGroupModule } from '@fundamental-ngx/core/input-group';
         ProductSwitchModule,
         IconModule,
         AvatarModule,
-        InputGroupModule
+        InputGroupModule,
         ContentDensityModule
     ],
     exports: [
