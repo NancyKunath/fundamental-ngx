@@ -1,4 +1,4 @@
-import { HIDDEN_CLASS_NAME, TableRowDirective } from './table-row.directive';
+import { TableRowDirective } from './table-row.directive';
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TableModule } from '../table.module';
@@ -26,24 +26,9 @@ describe('TableRowDirective', () => {
     let component: TestComponent;
     let fixture: ComponentFixture<TestComponent>;
 
-    const getElements = (): Element[] => {
-        const _elements = component.getElements();
-
-        const result: Element[] = [];
-
-        for (let i = 0; i < _elements.length; i++) {
-            result.push(_elements[i]);
-        }
-
-        return result;
-    };
-
-    const getInnerTextFromNodes = (): string[] => getElements().map((cell) => cell.innerHTML);
-
-    const getVisibleCells = (): string[] =>
-        getElements()
-            .filter((cell) => !cell.classList.contains(HIDDEN_CLASS_NAME))
-            .map((cell) => cell.innerHTML);
+    function getCellsKeys(): string[] {
+        return component.tableRow.cells.map((cell) => cell.key);
+    }
 
     beforeEach(
         waitForAsync(() => {
@@ -69,7 +54,7 @@ describe('TableRowDirective', () => {
     it('should sort elements', () => {
         let keys = component.keys;
 
-        expect(getInnerTextFromNodes()).toEqual(keys);
+        expect(getCellsKeys()).toEqual(keys);
 
         keys = component.keys.reverse();
 
@@ -77,7 +62,7 @@ describe('TableRowDirective', () => {
 
         fixture.detectChanges();
 
-        expect(getInnerTextFromNodes()).toEqual(keys);
+        expect(getCellsKeys()).toEqual(keys);
 
         keys = [component.keys[1], component.keys[0], component.keys[3], component.keys[2]];
 
@@ -85,13 +70,13 @@ describe('TableRowDirective', () => {
 
         fixture.detectChanges();
 
-        expect(getInnerTextFromNodes()).toEqual(keys);
+        expect(getCellsKeys()).toEqual(keys);
     });
 
     it('should hide elements', () => {
         let keys = component.keys;
 
-        expect(getInnerTextFromNodes()).toEqual(keys);
+        expect(getCellsKeys()).toEqual(keys);
 
         component.keys.pop();
 
@@ -101,7 +86,7 @@ describe('TableRowDirective', () => {
 
         fixture.detectChanges();
 
-        expect(getVisibleCells()).toEqual(keys);
+        expect(getCellsKeys()).toEqual(keys);
 
         component.keys.pop();
 
@@ -111,6 +96,6 @@ describe('TableRowDirective', () => {
 
         fixture.detectChanges();
 
-        expect(getVisibleCells()).toEqual(keys);
+        expect(getCellsKeys()).toEqual(keys);
     });
 });
