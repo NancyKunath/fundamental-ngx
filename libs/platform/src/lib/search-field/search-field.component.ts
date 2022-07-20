@@ -39,6 +39,7 @@ import { Nullable } from '@fundamental-ngx/core/shared';
 import { PopoverComponent } from '@fundamental-ngx/core/popover';
 import { MobileModeConfig } from '@fundamental-ngx/core/mobile-mode';
 import { BaseComponent, SearchFieldDataSource } from '@fundamental-ngx/platform/shared';
+import { SkeletonConsumerDirective, skeletonConsumerProviders } from '@fundamental-ngx/core/skeleton';
 import {
     SEARCH_FIELD_COMPONENT,
     SearchFieldMobileInterface
@@ -84,7 +85,8 @@ let searchFieldIdCount = 0;
     templateUrl: './search-field.component.html',
     styleUrls: ['./search-field.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    providers: skeletonConsumerProviders()
 })
 export class SearchFieldComponent
     extends BaseComponent
@@ -312,6 +314,7 @@ export class SearchFieldComponent
         };
     }
 
+    /** @hidden */
     constructor(
         private readonly _overlay: Overlay,
         private readonly _viewContainerRef: ViewContainerRef,
@@ -320,9 +323,12 @@ export class SearchFieldComponent
         @Optional() private readonly _rtl: RtlService,
         @Inject(DOCUMENT) private readonly _document: Document,
         private readonly _liveAnnouncer: LiveAnnouncer,
-        readonly _dynamicComponentService: DynamicComponentService
+        readonly _dynamicComponentService: DynamicComponentService,
+        private readonly _skeletonConsumer: SkeletonConsumerDirective
     ) {
         super(_cd);
+
+        _skeletonConsumer.consume();
     }
 
     /** @hidden */

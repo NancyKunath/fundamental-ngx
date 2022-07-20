@@ -19,6 +19,7 @@ import { MultiInputModule } from '@fundamental-ngx/core/multi-input';
 import { RadioModule } from '@fundamental-ngx/core/radio';
 import { SelectModule } from '@fundamental-ngx/core/select';
 import { BusyIndicatorModule } from '@fundamental-ngx/core/busy-indicator';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 
 import { PlatformObjectStatusModule } from '@fundamental-ngx/platform/object-status';
 import { PlatformSearchFieldModule } from '@fundamental-ngx/platform/search-field';
@@ -80,7 +81,8 @@ import { ApprovalFlowToolbarActionsComponent } from './approval-flow-toolbar-act
         FormModule,
         DragDropModule,
         RadioModule,
-        IllustratedMessageModule
+        IllustratedMessageModule,
+        SkeletonModule
     ],
     exports: [ApprovalFlowComponent]
 })

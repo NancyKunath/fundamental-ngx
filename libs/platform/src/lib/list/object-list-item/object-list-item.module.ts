@@ -13,6 +13,7 @@ import { ObjectIdentifierModule } from '@fundamental-ngx/core/object-identifier'
 import { ObjectMarkerModule } from '@fundamental-ngx/core/object-marker';
 import { ObjectNumberModule } from '@fundamental-ngx/core/object-number';
 import { RadioModule } from '@fundamental-ngx/core/radio';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 import { PlatformLinkModule } from '@fundamental-ngx/platform/link';
 import { PlatformObjectStatusModule } from '@fundamental-ngx/platform/object-status';
 import { PlatformObjectAttributeModule } from '@fundamental-ngx/platform/object-attribute';
@@ -37,7 +38,8 @@ import { ObjectListItemRowComponent } from './object-list-item-row.component';
         ObjectMarkerModule,
         ObjectNumberModule,
         ObjectIdentifierModule,
-        PlatformObjectAttributeModule
+        PlatformObjectAttributeModule,
+        SkeletonModule
     ],
     exports: [ObjectListItemComponent, ObjectListItemRowComponent]
 })

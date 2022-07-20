@@ -31,7 +31,9 @@
         *ngIf="_approvalProcess?.watchers?.length || _isEditMode"
         [attr.aria-label]="watchersLabel"
     >
-        <p class="fdp-approval-flow__watchers-title" i18n="@@platformApprovalFlowWatchers">{{ watchersLabel }}</p>
+        <p class="fdp-approval-flow__watchers-title" i18n="@@platformApprovalFlowWatchers" fdSkeletonConsumer>
+            {{ watchersLabel }}
+        </p>
 
         <ng-container *ngIf="!_isEditMode">
             <fd-avatar
@@ -74,6 +76,8 @@
                 >
                     <button
                         *ngIf="_carouselStepsLeft > 0"
+                        fd-button
+                        fdSkeletonConsumer
                         class="fdp-approval-flow-carousel-controls__button--prev-slide"
                         aria-label="Go to previous slide"
                         i18n-aria-label="@@platformApprovalPrevButton"
@@ -85,6 +89,7 @@
 
                     <button
                         *ngIf="_carouselStepsRight > 0"
+                        fdSkeletonConsumer
                         class="fdp-approval-flow-carousel-controls__button--next-slide"
                         aria-label="Go to next slide"
                         i18n-aria-label="@@platformApprovalNextButton"
