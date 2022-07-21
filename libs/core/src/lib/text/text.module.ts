@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { TextComponent } from './text.component';
 import { LinkModule } from '@fundamental-ngx/core/link';
 import { LineClampModule } from '@fundamental-ngx/core/utils';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 
 @NgModule({
     declarations: [TextComponent],
-    imports: [CommonModule, LinkModule, LineClampModule],
+    imports: [CommonModule, LinkModule, LineClampModule, SkeletonModule],
     exports: [TextComponent]
 })
 export class TextModule {}
