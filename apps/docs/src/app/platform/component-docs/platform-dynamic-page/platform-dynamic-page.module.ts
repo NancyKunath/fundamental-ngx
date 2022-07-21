@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BarModule } from '@fundamental-ngx/core/bar';
 import { BreadcrumbModule } from '@fundamental-ngx/core/breadcrumb';
 import { FlexibleColumnLayoutModule } from '@fundamental-ngx/core/flexible-column-layout';
-import { InlineHelpModule } from '@fundamental-ngx/core/inline-help';
 import { ToolbarModule } from '@fundamental-ngx/core/toolbar';
 import { DynamicPageModule } from '@fundamental-ngx/core/dynamic-page';
 import { PlatformButtonModule } from '@fundamental-ngx/platform/button';
@@ -22,6 +21,8 @@ import { PlatformDynamicPageResponsivePaddingExampleComponent } from './platform
 import { PlatformDynamicPageSnapScrollExampleComponent } from './platform-dynamic-page-examples/platform-dynamic-page-snap-scroll-example.component';
 import { PlatformDynamicPageTabbedExampleComponent } from './platform-dynamic-page-examples/platform-dynamic-page-tabbed-example.component';
 import { PlatformDynamicPageHeaderComponent } from './platform-dynamic-page-header/platform-dynamic-page-header.component';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
+import { TextModule } from '@fundamental-ngx/core/text';
 
 const routes: Routes = [
     {
@@ -46,7 +47,8 @@ const routes: Routes = [
         BarModule,
         FlexibleColumnLayoutModule,
         DynamicPageModule,
-        InlineHelpModule
+        SkeletonModule,
+        TextModule
     ],
     exports: [RouterModule],
     declarations: [
