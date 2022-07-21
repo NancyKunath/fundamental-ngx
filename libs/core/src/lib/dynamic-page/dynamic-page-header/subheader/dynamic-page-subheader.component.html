@@ -9,6 +9,7 @@
     >
         <ng-content></ng-content>
     </div>
+
     <div class="fd-dynamic-page__collapsible-header-visibility-container" #pincollapseContainer>
         <ng-container *ngIf="collapsible">
             <div class="fd-dynamic-page__collapsible-header-visibility-container--left-gradient"></div>
@@ -19,6 +20,7 @@
             >
                 <button
                     fd-button
+                    fdSkeletonConsumer
                     class="fd-dynamic-page__collapse-button"
                     aria-haspopup="true"
                     [ariaLabel]="collapsed ? expandLabel : collapseLabel"
@@ -32,6 +34,7 @@
                 </button>
                 <button
                     fd-button
+                    fdSkeletonConsumer
                     class="fd-dynamic-page__pin-button"
                     [ariaLabel]="_pinned ? unpinAriaLabel : pinAriaLabel"
                     [attr.title]="_pinned ? unpinAriaLabel : pinAriaLabel"

@@ -16,6 +16,7 @@ import { Component } from '@angular/core';
             }
             .fd-dynamic-page-section-example {
                 min-height: 20vh;
+                display: block;
             }
         `
     ]
