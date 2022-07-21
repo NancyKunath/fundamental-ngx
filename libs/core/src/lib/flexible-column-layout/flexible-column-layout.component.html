@@ -14,7 +14,7 @@
         <ng-container *ngTemplateOutlet="startColumn"></ng-container>
     </div>
     <!-- Left Separator -->
-    <div *ngIf="_leftColumnSeparator" class="fd-flexible-column-layout__separator">
+    <div *ngIf="_leftColumnSeparator" class="fd-flexible-column-layout__separator" fdSkeletonConsumer>
         <button
             fd-button
             [compact]="true"
@@ -40,7 +40,7 @@
         <ng-container *ngTemplateOutlet="midColumn"></ng-container>
     </div>
     <!-- Right Separator -->
-    <div *ngIf="_rightColumnSeparator" class="fd-flexible-column-layout__separator">
+    <div *ngIf="_rightColumnSeparator" class="fd-flexible-column-layout__separator" fdSkeletonConsumer>
         <button
             fd-button
             [compact]="true"
