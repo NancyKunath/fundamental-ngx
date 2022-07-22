@@ -53,7 +53,6 @@ const routes: Routes = [
     declarations: [
         PlatformVhdDocsComponent,
         PlatformVhdHeaderComponent,
-
         PlatformVhdBasicExampleComponent,
         PlatformVhdTokenExampleComponent,
         PlatformVhdLoadingExampleComponent,

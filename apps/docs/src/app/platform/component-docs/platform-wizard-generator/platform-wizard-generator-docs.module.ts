@@ -28,6 +28,7 @@ import { WizardGeneratorOnchangeExampleComponent } from './examples/wizard-gener
 import { IconModule } from '@fundamental-ngx/core/icon';
 import { WizardGeneratorVisibilityBetweenStepsExampleComponent } from './examples/wizard-generator-visibility-between-steps-example.component';
 import { WizardGeneratorSpecialElementsExampleComponent } from './examples/wizard-generator-special-elements-example.component';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 
 const routes: Routes = [
     {
@@ -68,7 +69,8 @@ const routes: Routes = [
         BarModule,
         LayoutGridModule,
         PlatformLinkModule,
-        IconModule
+        IconModule,
+        SkeletonModule
     ]
 })
 export class PlatformWizardGeneratorDocsModule {}

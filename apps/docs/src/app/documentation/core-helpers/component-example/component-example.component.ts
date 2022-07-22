@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { SkeletonGlobalService } from '@fundamental-ngx/core/skeleton';
 import { DialogService } from '@fundamental-ngx/core/dialog';
 import { RtlService } from '@fundamental-ngx/core/utils';
+import { WizardDialogGeneratorService } from '@fundamental-ngx/platform/wizard-generator';
 
 let componentExampleUniqueId = 0;
 
@@ -26,12 +27,7 @@ let componentExampleUniqueId = 0;
         <fd-skeleton></fd-skeleton>
     `,
     styleUrls: ['./component-example.component.scss'],
-    providers: [
-        SkeletonGlobalService,
-        RtlService,
-        // Needed in order for dialog service and components to inherit local rtl service.
-        DialogService
-    ],
+    providers: [SkeletonGlobalService, RtlService, DialogService, WizardDialogGeneratorService],
     encapsulation: ViewEncapsulation.None
 })
 export class ComponentExampleComponent implements OnInit {
