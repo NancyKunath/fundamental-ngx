@@ -24,6 +24,7 @@ import {
     PlatformVhdStrategyLabelExampleComponent
 } from './platform-vhd-examples';
 import { PlatformVhdLoadingExampleComponent } from './platform-vhd-examples/platform-vhd-loading-example.component';
+import { SkeletonModule } from '@fundamental-ngx/core/skeleton';
 
 const routes: Routes = [
     {
@@ -47,7 +48,8 @@ const routes: Routes = [
         TokenModule,
         ToolbarModule,
         PlatformValueHelpDialogModule,
-        CheckboxModule
+        CheckboxModule,
+        SkeletonModule
     ],
     exports: [RouterModule],
     declarations: [

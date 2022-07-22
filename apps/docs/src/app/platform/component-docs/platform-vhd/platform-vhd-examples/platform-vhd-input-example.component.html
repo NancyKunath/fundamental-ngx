@@ -1,4 +1,4 @@
-<div fd-form-item>
+<div fd-form-item *fdSkeletonState="false">
     <label fd-form-label for="test-selection-type-single">Selection type: single</label>
     <fd-input-group>
         <input fd-input-group-input fd-form-control id="test-selection-type-single" [value]="valuesSingle?.name" />
@@ -37,7 +37,7 @@
     ></fdp-value-help-dialog-filter>
 </fdp-value-help-dialog>
 <br />
-<div fd-form-item>
+<div fd-form-item *fdSkeletonState="false">
     <label fd-form-label for="test-selection-type-single">Selection type: multi</label>
     <fd-token fd-toolbar-item *ngFor="let item of valuesMulti" [compact]="true" [readOnly]="true">
         {{ item.name }}
@@ -73,7 +73,7 @@
     ></fdp-value-help-dialog-filter>
 </fdp-value-help-dialog>
 <br />
-<div fd-form-item>
+<div fd-form-item *fdSkeletonState="false">
     <label fd-form-label for="test-selection-type-once">Selection type: once</label>
     <fd-input-group>
         <input fd-input-group-input fd-form-control id="test-selection-type-once" [value]="valuesOnce?.name" />
